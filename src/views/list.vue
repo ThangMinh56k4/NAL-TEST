@@ -12,7 +12,11 @@
         <b-dropdown
           id="dropdown-dropright"
           dropright
-          :text=" order == 'desc' ? 'Creation date - Latest' : 'Date of creation - Oldest'"
+          :text="
+            order == 'desc'
+              ? 'Creation date - Latest'
+              : 'Date of creation - Oldest'
+          "
           variant="primary"
         >
           <b-dropdown-item
@@ -142,6 +146,8 @@ export default {
   created() {
     this.fetchAllData();
     this.fetchData(1);
+
+    console.log("this.$store.state.count", this.$store.getters.getUser);
   },
   methods: {
     handleSearch() {

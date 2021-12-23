@@ -16,7 +16,7 @@
     <main class="LayoutArticle-main">
       <slot />
     </main>
-    <!-- <footer class="LayoutArticle-ooter">&copy; thangminh56k4@gmai.com</footer> -->
+    <!-- <footer class="LayoutArticle-ooter">&copy; {{usr.email}}</footer> -->
   </div>
 </template>
 
@@ -34,6 +34,9 @@ export default {
     routePath() {
       return this.$route.path;
     },
+    usr(){
+      return this.$store.getters.getUser;
+    }
   },
 };
 </script>
